@@ -1,14 +1,15 @@
 {
 	"cities": [
-		{
+		{	"id":1,
 			"country": "Turkey",
 			"gasoline": "0.77",
 			"currency": "usd",
 			"diesel": "0.76",
 			"lpg": "0.45"
 		},
-		{
-			"country": "United Stats",
+		{	
+			"id":2,
+			"country": "United States",
 			"gasoline": "2.30",
 			"currency": "usd",
 			"diesel": "2.38",

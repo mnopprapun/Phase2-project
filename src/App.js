@@ -1,29 +1,58 @@
-import React from 'react';
 import { render } from 'react-dom';
 
 import CardContainer from './CardContainer/CardContainer';
 import CitySearch from './CitySearch/CitySearch'
+import Home from './Home'
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const cityUrl = 'http://localhost:3000/cities'
 
-class App extends React.Component{
-
-
-componentDidMount = () => {
-  fetch(cityUrl)
-  .then(res=>res.json())
-  .then(data=>console.log(data))
-}
-
-render(){
+export default function App() {
   return (
-    <div>
-      <CitySearch />
+    <Router>
       <div>
-        <CardContainer />
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/saved-cards">Saved</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/saved-cards">
+            <CardContainer />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-    </div>
+    </Router>
   );
-  }
 }
-export default App
+
+
+
+
+
+function Users() {
+  return <h2>Users</h2>;
+}
