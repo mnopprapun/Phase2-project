@@ -9,11 +9,19 @@ class SavedCard extends Component {
     return (
       <MDBCard style={{ maxWidth: '22rem' }}>
         <MDBCardBody>
-          <MDBCardTitle>Card title</MDBCardTitle>
+          <MDBCardTitle>{this.props.country}</MDBCardTitle>
           <MDBCardText>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
+          Gasoline:{this.props.gasoline}
         </MDBCardText>
-          <MDBBtn>Button</MDBBtn>
+
+        <MDBCardText>
+          Disel:{this.props.diesel}
+        </MDBCardText>
+
+        <MDBCardText>
+          Currency:{this.props.currency}
+        </MDBCardText>
+          <MDBBtn>Delete</MDBBtn>
         </MDBCardBody>
       </MDBCard>
     );
