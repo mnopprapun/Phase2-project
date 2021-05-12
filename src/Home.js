@@ -10,16 +10,6 @@ const cityUrl = 'http://localhost:3000/cities'
 class Home extends React.Component {
 
 
-//     state={
-//         allCards:[]
-//     }
-
-
-//   componentDidMount = () => {
-//     fetch(cityUrl)
-//       .then(res => res.json())
-//       .then(data => this.setState({allCards:data}))
-//   }
 
   render() {
     return (
