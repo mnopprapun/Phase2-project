@@ -1,19 +1,18 @@
 {
 	"cities": [
 		{	"id":1,
-			"country": "Turkey",
-			"gasoline": "0.77",
-			"currency": "usd",
-			"diesel": "0.76",
-			"lpg": "0.45"
+			"city": "Houston",
+			"current": 82,
+			"highs": 80,
+			"lows":70
+			
 		},
 		{	
 			"id":2,
-			"country": "United States",
-			"gasoline": "2.30",
-			"currency": "usd",
-			"diesel": "2.38",
-			"lpg": null
+			"city": "Austin",
+			"current": 85,
+			"highs": 90,
+			"lows":70
 		}
 	]
 }

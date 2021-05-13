@@ -5,9 +5,51 @@ import CitySearch from './CitySearch/CitySearch';
 
 
 
-const cityUrl = 'http://localhost:3000/cities'
+
 
 class Home extends React.Component {
+
+  state={
+      weather:{
+        name:'',
+        main:{
+          temp:'',
+          temp_max:'',
+          temp_min:''
+        }
+      },
+      city:[]
+  }
+
+
+
+
+   
+
+    searchHandle=(event)=>{
+      event.preventDefault();
+
+        let city=this.state.city
+        const cityUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=51e464ca4cdfb256e268caccccef8edf`
+
+          fetch(cityUrl)
+          .then(response => response.json())
+          .then(data=> this.setState({weather:data})
+        
+          )
+
+    }
+
+    handleChange=(event)=>{
+
+
+      this.setState({
+        city: event .target.value
+      })
+
+    }
+
+
 
 
 
@@ -15,7 +57,10 @@ class Home extends React.Component {
     return (
       <div>
           <h1>Welcome Home:</h1>
-          <CitySearch/>
+          <CitySearch searchHandle={this.searchHandle}
+          handleChange={this.handleChange}
+          weather={this.state.weather}/>
+          
       </div>
     );
   }

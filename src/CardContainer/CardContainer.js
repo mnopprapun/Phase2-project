@@ -24,10 +24,10 @@ class CardContainer extends React.Component {
 			{this.state.allCards.map(card=> <SavedCard
 			card={card}
 			key={card.id}
-			country={card.country}
-			gasoline={card.gasoline}
-			diesel={card.diesel}
-			currency={card.currency}
+			city={card.city}
+			current={card.current}
+			highs={card.highs}
+			lows={card.lows}
 
 			
 			

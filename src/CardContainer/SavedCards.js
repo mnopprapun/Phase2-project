@@ -9,18 +9,19 @@ class SavedCard extends Component {
     return (
       <MDBCard style={{ maxWidth: '22rem' }}>
         <MDBCardBody>
-          <MDBCardTitle>{this.props.country}</MDBCardTitle>
-          <MDBCardText>
-          Gasoline:{this.props.gasoline}
+          <MDBCardTitle>{this.props.city}</MDBCardTitle>
+         
+        <MDBCardText>
+          Current:{this.props.current}
+        </MDBCardText>
+        <MDBCardText>
+          Highs:{this.props.highs}
+        </MDBCardText>   
+         <MDBCardText>
+          Lows:{this.props.lows}
         </MDBCardText>
 
-        <MDBCardText>
-          Disel:{this.props.diesel}
-        </MDBCardText>
-
-        <MDBCardText>
-          Currency:{this.props.currency}
-        </MDBCardText>
+       
           <MDBBtn>Delete</MDBBtn>
         </MDBCardBody>
       </MDBCard>

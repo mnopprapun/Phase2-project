@@ -9,11 +9,19 @@ class LiveCard extends Component {
 		return (
 			<MDBCard style={{ maxWidth: '22rem' }}>
 				<MDBCardBody>
-					<MDBCardTitle>Card title</MDBCardTitle>
+					<MDBCardTitle>{this.props.weather.name}</MDBCardTitle>
 					<MDBCardText>
-						Some quick example text to build on the card title and make up the bulk of the card's content.
-        </MDBCardText>
-					<MDBBtn>Button</MDBBtn>
+						Current:{this.props.weather.main.temp}&deg;F
+                    </MDBCardText>
+
+                    <MDBCardText>
+						Highs {this.props.weather.main.temp_max}&deg;F
+                    </MDBCardText>
+
+                    <MDBCardText>
+						Lows {this.props.weather.main.temp_min}&deg;F
+                    </MDBCardText>        				 
+					<MDBBtn>Save</MDBBtn>
 				</MDBCardBody>
 			</MDBCard>
 		);
