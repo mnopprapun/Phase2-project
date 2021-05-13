@@ -2,41 +2,56 @@ import React from 'react';
 import SavedCard from "./SavedCards";
 import { render } from 'react-dom';
 
-const cityUrl = 'http://localhost:3000/cities'
-
+const url = 'http://localhost:3000/cities/'
 
 class CardContainer extends React.Component {
-	state={
-        allCards:[]
-    }
+  state = {
+    allCards: []
+  }
 
 
   componentDidMount = () => {
-    fetch(cityUrl)
+    fetch(url)
       .then(res => res.json())
-      .then(data => this.setState({allCards:data}))
+      .then(newCity => this.setState({ allCards: newCity }))
   }
 
-  	render(){
 
-		  return (
-			  <div>
-			{this.state.allCards.map(card=> <SavedCard
-			card={card}
-			key={card.id}
-			country={card.country}
-			gasoline={card.gasoline}
-			diesel={card.diesel}
-			currency={card.currency}
+  deleteHandle = (cards) => {
 
-			
-			
-			
-			
-			/>)}
-		</div>
-	);
-}
+    let newCardArr = this.state.allCards.filter(card => card != cards)
+
+    this.setState({
+      allCards: newCardArr
+    })
+
+    fetch(url + cards.id, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json'
+      }})
+      .then(res => res.json())
+      .then((newCard) => this.setState({ allCards: newCardArr }))
+    }
+
+  render() {
+
+    return (
+      <div>
+        {this.state.allCards.map(card => 
+        <SavedCard
+          card={card}
+          key={card.id}
+          name={card.name}
+          current={card.main.temp}
+          highs={card.main.temp_max}
+          lows={card.main.temp_min}
+          deleteHandle={this.deleteHandle}
+
+        />)}
+      </div>
+    );
+  }
 }
 
 

@@ -16,28 +16,8 @@ import {
 ReactDOM.render(
   <React.StrictMode>
 
-    <Router>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-      <nav>
-        <Link to="/MyCity">My City</Link>
-      </nav>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
-      <Switch>
-        <Route path="/">
-        </Route>
-        <Route path="/MyCity">
-          <MyCities />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route >
-      </Switch>
-
-    </Router>
+    
+    
 
     <App />
 
