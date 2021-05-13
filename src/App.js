@@ -1,5 +1,4 @@
 import { render } from 'react-dom';
-
 import CardContainer from './CardContainer/CardContainer';
 import CitySearch from './CitySearch/CitySearch'
 import Home from './Home'
@@ -47,6 +46,7 @@ export default function App() {
       </div>
     </Router>
   );
+
 }
 
 
