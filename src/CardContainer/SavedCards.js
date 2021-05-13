@@ -9,7 +9,7 @@ class SavedCard extends Component {
     return (
       <MDBCard style={{ maxWidth: '22rem' }}>
         <MDBCardBody>
-          <MDBCardTitle>{this.props.city}</MDBCardTitle>
+          <MDBCardTitle>{this.props.name}</MDBCardTitle>
          
         <MDBCardText>
           Current:{this.props.current}
@@ -22,7 +22,7 @@ class SavedCard extends Component {
         </MDBCardText>
 
        
-          <MDBBtn>Delete</MDBBtn>
+          <MDBBtn onClick={()=>{this.props.deleteHandle(this.props.card)}}>Delete</MDBBtn>
         </MDBCardBody>
       </MDBCard>
     );

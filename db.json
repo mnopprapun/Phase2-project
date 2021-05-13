@@ -1,18 +1,92 @@
 {
-	"cities": [
-		{	"id":1,
-			"city": "Houston",
-			"current": 82,
-			"highs": 80,
-			"lows":70
-			
-		},
-		{	
-			"id":2,
-			"city": "Austin",
-			"current": 85,
-			"highs": 90,
-			"lows":70
-		}
-	]
+  "cities": [
+    {
+      "coord": {
+        "lon": -95.8997,
+        "lat": 29.69
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "overcast clouds",
+          "icon": "04d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 75.16,
+        "feels_like": 75.52,
+        "temp_min": 73.38,
+        "temp_max": 77.68,
+        "pressure": 1023,
+        "humidity": 67
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 1.01,
+        "deg": 284,
+        "gust": 4
+      },
+      "clouds": {
+        "all": 90
+      },
+      "dt": 1620934995,
+      "sys": {
+        "type": 2,
+        "id": 2033652,
+        "country": "US",
+        "sunrise": 1620905514,
+        "sunset": 1620954487
+      },
+      "timezone": -18000,
+      "id": 4692658,
+      "name": "Fulshear",
+      "cod": 200
+    },
+    {
+      "coord": {
+        "lon": -97.7431,
+        "lat": 30.2672
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "broken clouds",
+          "icon": "04d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 72.68,
+        "feels_like": 72.66,
+        "temp_min": 68.61,
+        "temp_max": 76.08,
+        "pressure": 1023,
+        "humidity": 64
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 1.99,
+        "deg": 45,
+        "gust": 5.99
+      },
+      "clouds": {
+        "all": 75
+      },
+      "dt": 1620934540,
+      "sys": {
+        "type": 2,
+        "id": 2006840,
+        "country": "US",
+        "sunrise": 1620905892,
+        "sunset": 1620954994
+      },
+      "timezone": -18000,
+      "id": 4671654,
+      "name": "Austin",
+      "cod": 200
+    }
+  ]
 }

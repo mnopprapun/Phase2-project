@@ -18,7 +18,8 @@ const CitySearch = (props) => {
                 </label>
                 <input type="submit"  value="Go" />
             </form>
-			<LiveCard weather={props.weather} />
+			<LiveCard weather={props.weather} 
+			addCity={props.addCity}/>
 		</div>
 	);
 }

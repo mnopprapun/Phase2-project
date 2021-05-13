@@ -5,7 +5,7 @@ import CitySearch from './CitySearch/CitySearch';
 
 
 
-
+const url="http://localhost:3000/cities/"
 
 class Home extends React.Component {
 
@@ -18,7 +18,19 @@ class Home extends React.Component {
           temp_min:''
         }
       },
-      city:[]
+      city:[],
+      allCities:[]
+  }
+
+  componentDidMount=()=>{
+
+    fetch(url)
+    .then(res=>res.json())
+    .then(newCity=> this.setState({allCities:newCity}))
+
+      
+
+
   }
 
 
@@ -49,6 +61,25 @@ class Home extends React.Component {
 
     }
 
+    addCity=(city)=>{
+      let postOptions={
+        method: "POST",
+        headers:{
+          'Content-Type': 'application/json'
+        
+        },
+        body: JSON.stringify(city)
+  
+      }
+
+    fetch(url,postOptions)
+    .then(res=>res.json())
+    .then(newCity=> this.setState({allCities:[...this.state.allCities, newCity]}))
+
+        // console.log ('saved');
+
+    }
+
 
 
 
@@ -59,7 +90,9 @@ class Home extends React.Component {
           <h1>Welcome Home:</h1>
           <CitySearch searchHandle={this.searchHandle}
           handleChange={this.handleChange}
-          weather={this.state.weather}/>
+          weather={this.state.weather}
+          addCity={this.addCity}
+          />
           
       </div>
     );
