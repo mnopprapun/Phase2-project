@@ -62,13 +62,18 @@ class Home extends React.Component {
     }
 
     addCity=(city)=>{
+      let repackagedCity={
+        ...city,
+        weather:city.weather[0]
+
+      }
       let postOptions={
         method: "POST",
         headers:{
           'Content-Type': 'application/json'
         
         },
-        body: JSON.stringify(city)
+        body: JSON.stringify(repackagedCity)
   
       }
 
@@ -88,6 +93,7 @@ class Home extends React.Component {
     return (
       <div>
           <h1>Welcome Home:</h1>
+          <br></br>
           <CitySearch searchHandle={this.searchHandle}
           handleChange={this.handleChange}
           weather={this.state.weather}

@@ -47,20 +47,24 @@ class CardContainer extends React.Component {
 
 		  return (
 			  <div>
-			{this.state.allCards.map(card=> <SavedCard
+			{this.state.allCards.map(card=>  <SavedCard
 			card={card}
 			key={card.id}
 			name={card.name}
 			current={card.main.temp}
 			highs={card.main.temp_max}
 			lows={card.main.temp_min}
+      icon={card.weather.icon}
+      
 			deleteHandle={this.deleteHandle}
+
 
 			
 			
 			
 			
-			/>)}
+			/>
+      )}
 		</div>
 	);
 }

@@ -44,65 +44,36 @@ export default function App() {
 
     <Router>
       <div>
-        <nav>
+        <nav class="navbar navbar-dark bg-dark">
           <ul>
           <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/saved-cards">Saved</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
+
+              <Link  className="links" to="/">Home</Link>
+            
+          </li>
+            
+          <li> 
+              <Link  className="links" to="/saved-cards">Saved</Link>
+            </li>  
+            
+          <li>
+
+              {/* <Link  className="links" to="/users">Users</Link> */}
+          </li>
+            
           </ul>
-        </nav>
+
+
+
+
+
 
      
-      </div>
 
 
-
-
-
-      <MDBNavbar expand='lg' light bgColor='light'>
-      <MDBContainer fluid>
-        <MDBNavbarToggler
-          type='button'
-          data-target='#navbarLeftAlignExample'
-          aria-controls='navbarLeftAlignExample'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-          onClick={() => setShowNavLeft(!showNavLeft)}
-        >
-          <MDBIcon icon='bars' fas />
-        </MDBNavbarToggler>
-
-        <MDBCollapse navbar show={showNavLeft}>
-          <MDBNavbarNav className='me-auto mb-2 mb-lg-0'>
-            <MDBNavbarItem>
-              <MDBNavbarLink  active aria-current='page' href='#' to="/" >
-                Home
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink href='#' to="/saved-cards">Saved</MDBNavbarLink>
-            </MDBNavbarItem>
-
-            <MDBNavbarItem>
-              
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
-                Disabled
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-          </MDBNavbarNav>
-        </MDBCollapse>
-      </MDBContainer>
-    </MDBNavbar>
-
-
+    </nav>
+ 
+  </div>
 
 
    {/* A <Switch> looks through its children <Route>s and
@@ -111,9 +82,9 @@ export default function App() {
           <Route path="/saved-cards">
             <CardContainer />
           </Route>
-          <Route path="/users">
+          {/* <Route path="/users">
             <Users />
-          </Route>
+          </Route> */}
           <Route path="/">
             <Home />
           </Route>
