@@ -1,8 +1,16 @@
+
+
 import React from 'react';
 import LiveCard from "./LiveCard";
 
 const CitySearch = (props) => {
  
+	
+let styling = {
+	alignItems:'center'
+}
+
+	
 	return (
 
 		<div>
@@ -13,7 +21,8 @@ const CitySearch = (props) => {
                 <input type="submit"  value="Go" />
             </form>
 			<LiveCard weather={props.weather} 
-			addCity={props.addCity}/>
+			addCity={props.addCity}
+			style={{styling}}/>
 		</div>
 	);
 }

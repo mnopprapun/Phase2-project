@@ -7,7 +7,7 @@ class LiveCard extends Component {
 
 	render() {
 		return (
-				<form onClick={()=>{this.props.addCity(this.props.weather)}}>
+				<form>
 			<MDBCard style={{ maxWidth: '22rem' }}>
 
 				<MDBCardBody >
@@ -23,7 +23,7 @@ class LiveCard extends Component {
                     <MDBCardText>
 						Lows {this.props.weather.main.temp_min}&deg;F
                     </MDBCardText>        				 
-					<MDBBtn>Save</MDBBtn>
+					<MDBBtn onClick={()=>{this.props.addCity(this.props.weather)}}>Save</MDBBtn>
 				</MDBCardBody>
 			</MDBCard>
 				</form>
